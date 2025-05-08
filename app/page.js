@@ -1,25 +1,6 @@
-
 'use client';
+import { exampleFoods } from './data/exampleFoods';
 import { Card, CardContent } from './ui/card';
-
-const exampleFoods = [
-  {
-    name: "ACANA ADULT SMALL BREED RECIPE 2kg",
-    brand: "ACANA",
-    level: "ULTRA PREMIUM",
-    μέγεθος: "ΜΙΝΙΑΤΟΥΡΑ",
-    ηλικία: "ΕΝΗΛΙΚΟΣ",
-    tags: ["GRAIN FREE", "HOLISTIC"]
-  },
-  {
-    name: "ROYAL CANIN MINI PUPPY 2kg",
-    brand: "ROYAL CANIN",
-    level: "SUPER PREMIUM",
-    μέγεθος: "ΜΙΚΡΟΣΩΜΟ",
-    ηλικία: "ΚΟΥΤΑΒΙ",
-    tags: []
-  }
-];
 
 export default function Page() {
   return (
@@ -34,7 +15,7 @@ export default function Page() {
                 {food.brand} • {food.level}
               </p>
               <p className="text-sm text-muted-foreground">
-                Μέγεθος: {food.μέγεθος} • Ηλικία: {food.ηλικία}
+                Μέγεθος: {food.μέγεθος} • Ηλικία: {food.ηλικία || '—'}
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {food.tags.map((tag, tagIndex) => (
